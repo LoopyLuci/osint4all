@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSINT4ALL // RETRO PUNK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Default Retro Punk Theme */
+        --color-punk-pink: #ff00ff;
+        --color-punk-cyan: #00ffff;
+        --color-punk-lime: #ccff00;
+        --color-punk-dark: #111111;
+        --color-punk-darker: #0a0a0a;
+        --color-punk-card: #1a1a1a;
+      }
+
+      body {
+        background-color: #050505; /* Fallback */
+        background-color: var(--bg-color, #050505);
+        background-image: 
+          linear-gradient(rgba(255, 0, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+        transition: background-color 0.3s ease;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #111; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--color-punk-pink); 
+        border: 2px solid #111;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-punk-cyan); 
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'retro': ['"VT323"', 'monospace'],
+              'header': ['"Press Start 2P"', 'cursive'],
+              'tech': ['"Share Tech Mono"', 'monospace'],
+            },
+            colors: {
+              punk: {
+                pink: 'var(--color-punk-pink)',
+                cyan: 'var(--color-punk-cyan)',
+                lime: 'var(--color-punk-lime)',
+                dark: 'var(--color-punk-dark)',
+                darker: 'var(--color-punk-darker)',
+                card: 'var(--color-punk-card)',
+              }
+            },
+            boxShadow: {
+              'retro': '4px 4px 0px 0px var(--color-punk-pink)',
+              'retro-hover': '2px 2px 0px 0px var(--color-punk-cyan)',
+              'retro-sm': '2px 2px 0px 0px var(--color-punk-lime)',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="text-gray-200 font-retro selection:bg-punk-pink selection:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
